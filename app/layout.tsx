@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Luxurious_Roman, Rouge_Script } from "next/font/google";
 import "./globals.css";
 import AppHeader from "@/components/AppHeader";
 
@@ -12,6 +12,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const rougeScript = Rouge_Script({
+  variable: "--font-rouge-script",
+  subsets:["latin"],
+  weight: ["400"]
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.className} antialiased`}
+        className={`${geistSans.className} ${rougeScript.variable} antialiased`}
       >
         <AppHeader />
         {children}
