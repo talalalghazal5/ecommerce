@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Luxurious_Roman, Rouge_Script } from "next/font/google";
 import "./globals.css";
 import AppHeader from "@/components/AppHeader";
+import "@/fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
