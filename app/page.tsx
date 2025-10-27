@@ -5,7 +5,7 @@ import secondHeroImage from '../public/images/product009.png';
 import thirdHeroImage from '../public/images/product016.png';
 import fourthHeroImage from '../public/images/product002.png';
 import { CategoryCard } from "@/components/CategoryCard";
-import { components } from "@/data/data";
+import { components, products } from "@/data/data";
 import ProductCard from "@/components/ProductCard";
 export default function Home() {
   return (
@@ -37,9 +37,13 @@ export default function Home() {
         </div>
       </section>
       <section className="flex flex-col justify-center items-center min-h-screen w-full p-4">
-          <h1 className="text-3xl text-center font-bold mb-10">Featured Products</h1>
+          <h1 className="text-3xl text-center font-bold mt-3 mb-10">Featured Products</h1>
           <div className="grid grid-cols-3 w-full lg:w-3/4 gap-5">
-            <ProductCard /> 
+            {
+              products.map((product) => (
+                <ProductCard key={product.id} product={product}/>
+              ))
+            }
           </div>
       </section>
     </main>
