@@ -6,7 +6,7 @@ import { Button } from './ui/button'
 import 'boxicons/css/boxicons.min.css'
 export default function AppHeader() {
     return (
-        <header className='px-6 py-3 flex items-center justify-evenly fixed w-full border-b'>
+        <header className='px-6 py-3 flex items-center backdrop-blur-3xl z-50 justify-evenly fixed w-full border-b'>
             <Link href='/' className='font-bold text-2xl'>Store<span className='text-amber-500'>Brand.</span></Link>
             <Navbar />
             <Searchbar />
