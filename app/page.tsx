@@ -8,8 +8,8 @@ import { CategoryCard } from "@/components/CategoryCard";
 import { components } from "@/data/data";
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center ">
-      <main className="flex min-h-screen w-full items-center justify-around">
+    <main className="flex flex-col min-h-screen items-center justify-center ">
+      <section className="flex min-h-screen w-full items-center justify-around">
         <div>
           <h1 className="text-5xl font-bold">Shopping became <span className="font-rouge text-7xl text-amber-500">premium.</span></h1>
             <h2 className="mt-3 mb-4 max-w-2xl text-md text-gray-700">
