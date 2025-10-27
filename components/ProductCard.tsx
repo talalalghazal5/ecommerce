@@ -6,10 +6,34 @@ import Image from "next/image";
 import { Button } from './ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { Product } from '@/data/types';
 
+type QuantitySelectorProps = {
+    quantity: number;
+    onIncrement: () => void;
+    onDecrement: () => void;
+}
 
-export default function ProductCard() {
+const QuantitySelector = ({ quantity, onIncrement, onDecrement }: QuantitySelectorProps) => {
+    return (
+        <div className="flex">
+            <Button size={'icon-sm'} variant={'outline'} onClick={onDecrement} className='rounded-br-none rounded-tr-none'><FontAwesomeIcon icon={faMinus}></FontAwesomeIcon></Button>
+            <div className="w-[30px] text-center flex justify-center items-center border">{quantity}</div>
+            <Button size={'icon-sm'} variant={'outline'} onClick={onIncrement} className='rounded-bl-none rounded-tl-none '><FontAwesomeIcon icon={faPlus}></FontAwesomeIcon></Button>
+        </div>
+    )
+}
+
+export default function ProductCard({product} : {product: Product}) {
     const [quantity, setQuantity] = useState<number>(1);
+
+    const handleQtyIncrement = () => {
+        setQuantity(prev => prev + 1);
+    }
+
+    const handleQtyDecrement = () => {
+        setQuantity(prev => Math.max(1, prev - 1));
+    }
 
     return (
         <Card>
