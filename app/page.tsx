@@ -3,6 +3,9 @@ import Image from "next/image";
 import heroImage from '../public/images/product006.png';
 import secondHeroImage from '../public/images/product009.png';
 import thirdHeroImage from '../public/images/product016.png';
+import fourthHeroImage from '../public/images/product002.png';
+import { CategoryCard } from "@/components/CategoryCard";
+import { components } from "@/data/data";
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center ">
