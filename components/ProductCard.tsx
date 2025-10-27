@@ -15,13 +15,13 @@ export default function ProductCard() {
         <Card>
             <CardHeader>
                 <CardTitle>
-                    <Image src={img} width={300} height={300} alt='product image'></Image>
+                    <Image src={product.imagepath} alt='' width={300} height={300}></Image>
                 </CardTitle>
-                <CardTitle className=''>iPhone 16 Pro Max</CardTitle>
-                <CardTitle className='text-chart-5 font-bold'>1199$</CardTitle>
+                <CardTitle className=''>{product.title}</CardTitle>
+                <CardTitle className='text-chart-5 font-bold'>{product.price}$</CardTitle>
             </CardHeader>
             <CardContent>
-                <CardDescription>this is a second description about the card and the product to make it longer</CardDescription>
+                <CardDescription>{product.description}</CardDescription>
             </CardContent>
             <CardFooter className='justify-between'>
                 <Button>Add to cart</Button>
