@@ -9,7 +9,7 @@ import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function ProductCard() {
-    const [quantity, serQuantity] = useState<number>(1);
+    const [quantity, setQuantity] = useState<number>(1);
 
     return (
         <Card>
