@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
-import img from '@/public/images/product003.png'
 import Image from "next/image";
 import { Button } from './ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -49,20 +48,10 @@ export default function ProductCard({product} : {product: Product}) {
             </CardContent>
             <CardFooter className='justify-between'>
                 <Button>Add to cart</Button>
-                <QuantitySelector quantity={quantity}/>
+                <QuantitySelector quantity={quantity} onIncrement={handleQtyIncrement} onDecrement={handleQtyDecrement}/>
             </CardFooter>
         </Card>
     )
 }
 
 
-
-export function QuantitySelector({ quantity }: { quantity: number }) {
-    return (
-        <div className="flex">
-            <Button size={'icon-sm'} variant={'outline'} className='rounded-br-none rounded-tr-none'><FontAwesomeIcon icon={faMinus}></FontAwesomeIcon></Button>
-            <div className="w-[30px] text-center flex justify-center items-center border">{quantity}</div>
-            <Button size={'icon-sm'} variant={'outline'} className='rounded-bl-none rounded-tl-none '><FontAwesomeIcon icon={faPlus}></FontAwesomeIcon></Button>
-        </div>
-    )
-}
