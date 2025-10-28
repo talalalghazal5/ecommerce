@@ -37,14 +37,28 @@ export default function Home() {
         </div>
       </section>
       <section className="flex flex-col justify-center items-center min-h-screen w-full p-4">
-          <h1 className="text-3xl text-center font-bold mt-3 mb-10">Featured Products</h1>
-          <div className="grid grid-cols-3 w-full lg:w-3/4 gap-5">
-            {
-              products.map((product) => (
-                <ProductCard key={product.id} product={product}/>
-              ))
-            }
-          </div>
+        <h1 className="text-3xl text-center font-bold mt-3 mb-10">Featured Products</h1>
+        <div className="grid grid-cols-3 w-full lg:w-3/4 gap-5">
+          {
+            products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))
+          }
+        </div>
+      </section>
+      <section className="flex justify-evenly items-center w-full p-4 h-[200px] bg-amber-600">
+        <div className="">
+          <h1 className="font-semibold text-2xl text-white">
+            Subscribe to our newsletter
+          </h1>
+          <h2 className="text-md text-white/50">Send your email address to get in touch with our latest news and products</h2>
+        </div>
+        <div className="">
+          <form action="" className="flex space-x-3 items-center">
+            <input type="email" placeholder="Enter your email" className="border p-2 rounded-md bg-white" />
+            <Button className="rounded-md bg-blue-800 cursor-pointer hover:bg-blue-900 text-md" size={"lg"}>Subscribe</Button>
+          </form>
+        </div>
       </section>
     </main>
   );
