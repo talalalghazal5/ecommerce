@@ -4,15 +4,12 @@ import {
     CardAction,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
 import { Category } from "@/data/types"
 import 'boxicons/css/boxicons.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 export function CategoryCard({ category }: { category: Category }) {
     return (

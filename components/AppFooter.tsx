@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaypal, faCcVisa, faCcMastercard, faApplePay, faGooglePay, faFacebook, faInstagram, faXTwitter, faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { faCopyright } from '@fortawesome/free-solid-svg-icons';
-import { faC } from '@fortawesome/free-solid-svg-icons/faC';
 
 export default function AppFooter() {
     return (

@@ -1,8 +1,3 @@
-import { Button } from "@/components/ui/button";
-
-import { CategoryCard } from "@/components/main/ui/CategoryCard";
-import { components, products } from "@/data/data";
-import ProductCard from "@/components/main/ui/ProductCard";
 import Slogan from "@/components/main/Slogan";
 import HeroImage from "@/components/main/HeroImage";
 import CategoriesGrid from "@/components/main/CategoriesGrid";
