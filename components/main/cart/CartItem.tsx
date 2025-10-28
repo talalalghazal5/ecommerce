@@ -14,6 +14,7 @@ import { CartItem, Product } from "@/data/types"
 import { QuantitySelector } from "../ui/ProductCard"
 import { useContext, useState } from "react"
 import { useCart } from "@/contexts/CartContext"
+import Image from "next/image"
 
 
 export function CartItemCard({ item }: { item: CartItem }) {
@@ -24,7 +25,9 @@ export function CartItemCard({ item }: { item: CartItem }) {
         // persist change to context and update local state
         setQuantity(prev => {
             const newQty = prev + 1;
-            cart.updateQuantity(item.id, newQty);
+            setTimeout(() => {
+                cart.updateQuantity(item.id, newQty);
+            }, 500)
             return newQty;
         });
     }
@@ -36,7 +39,9 @@ export function CartItemCard({ item }: { item: CartItem }) {
                 return 1;
             }
             const newQty = Math.max(1, prev - 1);
-            cart.updateQuantity(item.id, newQty);
+            setTimeout(() => {
+                cart.updateQuantity(item.id, newQty);
+            }, 500)
             return newQty;
         });
     }
@@ -44,6 +49,7 @@ export function CartItemCard({ item }: { item: CartItem }) {
         <div className="flex w-full max-w-md flex-col gap-6">
             <Item variant="outline">
                 <ItemContent>
+                    <ItemMedia variant={"image"}><Image src={item.product.imagepath} alt="product-image" width={100} height={100}></Image></ItemMedia>
                     <ItemTitle>{item.product.title}</ItemTitle>
                     <ItemDescription>
                         ${item.product.price}
