@@ -6,6 +6,7 @@ import { Button } from '../../ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Product } from '@/data/types';
+import { useCart } from '@/contexts/CartContext';
 
 type QuantitySelectorProps = {
     quantity: number;
@@ -23,8 +24,9 @@ export const QuantitySelector = ({ quantity, onIncrement, onDecrement }: Quantit
     )
 }
 
-export default function ProductCard({product} : {product: Product}) {
+export default function ProductCard({ product }: { product: Product }) {
     const [quantity, setQuantity] = useState<number>(1);
+    const cart = useCart();
 
     const handleQtyIncrement = () => {
         setQuantity(prev => prev + 1);
@@ -33,7 +35,11 @@ export default function ProductCard({product} : {product: Product}) {
     const handleQtyDecrement = () => {
         setQuantity(prev => Math.max(1, prev - 1));
     }
-
+    const handleAddToCart = () => {
+        const cartItem = { id: product.id, product: product, quantity: quantity };
+        if (cart.cart.includes(cartItem)) setQuantity(quantity + 1)
+        cart.addToCart(cartItem);
+    } 
     return (
         <Card>
             <CardHeader>
@@ -47,8 +53,8 @@ export default function ProductCard({product} : {product: Product}) {
                 <CardDescription>{product.description}</CardDescription>
             </CardContent>
             <CardFooter className='justify-between'>
-                <Button>Add to cart</Button>
-                <QuantitySelector quantity={quantity} onIncrement={handleQtyIncrement} onDecrement={handleQtyDecrement}/>
+                <Button onClick={handleAddToCart}>Add to cart</Button>
+                <QuantitySelector quantity={quantity} onIncrement={handleQtyIncrement} onDecrement={handleQtyDecrement} />
             </CardFooter>
         </Card>
     )
