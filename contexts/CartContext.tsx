@@ -32,6 +32,9 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     const removeFromCart = (id: string) => {
         setCart(prev => prev.filter(item => item.id !== id));
     }
+    const clearCart = () => {
+        setCart([]);
+    }
     const updateQuantity = (id: string, quantity: number) => {
         setCart(prev => prev.map(item => item.id === id ? { ...item, quantity } : item));
     }
