@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { Navbar } from './Navbar'
 import Searchbar from './Searchbar'
@@ -16,8 +17,11 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
+import { useCart } from '@/contexts/CartContext'
+import { CartItemCard } from './main/cart/CartItem'
 
 export function SheetDemo() {
+    const cart = useCart();
     return (
         <Sheet>
             <SheetTrigger asChild>
@@ -31,6 +35,11 @@ export function SheetDemo() {
                     <div className="grid gap-3">
                         {/* <Label htmlFor="sheet-demo-name">Name</Label>
                         <Input id="sheet-demo-name" defaultValue="Pedro Duarte" /> */}
+                        {
+                            cart.cart.map((item) => (
+                                <CartItemCard key={item.id} item={item} />
+                            ))
+                        }
                     </div>
                     <div className="grid gap-3">
                         {/* <Label htmlFor="sheet-demo-username">Username</Label>
@@ -57,7 +66,7 @@ export default function AppHeader() {
             <Navbar />
             <Searchbar />
             <div className="flex gap-7">
-                
+
                 <SheetDemo />
                 <Button size={'icon-lg'} className='rounded-full cursor-pointer bg-transparent hover:bg-muted'><i className='bx bx-user text-2xl text-black' ></i></Button>
             </div>
