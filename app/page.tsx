@@ -46,7 +46,7 @@ export default function Home() {
           }
         </div>
       </section>
-      <section className="flex justify-evenly items-center w-full p-4 h-[200px] bg-amber-600">
+      <section className="flex justify-evenly items-center w-full p-4 mt-4 h-[200px] bg-amber-600">
         <div className="">
           <h1 className="font-semibold text-2xl text-white">
             Subscribe to our newsletter
