@@ -4,6 +4,7 @@ import "./globals.css";
 import AppHeader from "@/components/AppHeader";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import AppFooter from "@/components/AppFooter";
 config.autoAddCss = false;
 
 const geistSans = Geist({
@@ -39,6 +40,7 @@ export default function RootLayout({
       >
         <AppHeader />
         {children}
+        <AppFooter />
       </body>
     </html>
   );
