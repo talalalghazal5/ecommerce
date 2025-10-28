@@ -2,6 +2,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { StaticImageData } from "next/image";
 
 export type Category = {
+    id: string;
     title: string;
     href: string;
     description: string;
@@ -17,4 +18,10 @@ export type Product = {
     price: number;
     description: string;
     imagepath: string;
+}
+
+export type CartItem = {
+    id: string;
+    product: Product;
+    quantity: number;
 }
