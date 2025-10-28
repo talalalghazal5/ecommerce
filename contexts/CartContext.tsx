@@ -1,6 +1,7 @@
 'use client';
 import { CartItem } from '@/data/types';
 import React, { useContext } from 'react'
+import { toast } from 'sonner';
 
 type CartContextType = {
     cart: CartItem[];
@@ -31,9 +32,10 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     };
     const removeFromCart = (id: string) => {
         setCart(prev => prev.filter(item => item.id !== id));
+        toast("Item removed from cart");
     }
     const clearCart = () => {
-        setCart([]);
+        setCart([]);    
     }
     const updateQuantity = (id: string, quantity: number) => {
         setCart(prev => prev.map(item => item.id === id ? { ...item, quantity } : item));
