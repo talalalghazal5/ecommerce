@@ -31,7 +31,7 @@ export function SheetDemo() {
                 <SheetHeader>
                     <SheetTitle>My cart</SheetTitle>
                 </SheetHeader>
-                <div className="grid flex-1 auto-rows-min gap-6 px-4">
+                <div className="grid flex-1 auto-rows-min gap-6 px-4 overflow-scroll">
                     <div className="grid gap-3">
                         {/* <Label htmlFor="sheet-demo-name">Name</Label>
                         <Input id="sheet-demo-name" defaultValue="Pedro Duarte" /> */}
