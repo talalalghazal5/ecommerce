@@ -5,6 +5,7 @@ import AppHeader from "@/components/AppHeader";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import AppFooter from "@/components/AppFooter";
+import { CartProvider } from "@/contexts/CartContext";
 config.autoAddCss = false;
 
 const geistSans = Geist({
@@ -14,7 +15,7 @@ const geistSans = Geist({
 
 const rougeScript = Rouge_Script({
   variable: "--font-rouge-script",
-  subsets:["latin"],
+  subsets: ["latin"],
   weight: ["400"]
 })
 
@@ -30,13 +31,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.className} ${rougeScript.variable} antialiased`}
-      >
-        <AppHeader />
-        {children}
-        <AppFooter />
-      </body>
+      <CartProvider>
+        <body
+          className={`${geistSans.className} ${rougeScript.variable} antialiased`}
+        >
+          <AppHeader />
+          {children}
+          <AppFooter />
+        </body>
+      </CartProvider>
     </html>
   );
 }
