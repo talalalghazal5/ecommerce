@@ -6,6 +6,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import AppFooter from "@/components/AppFooter";
 import { CartProvider } from "@/contexts/CartContext";
+import { Toaster } from "sonner";
 config.autoAddCss = false;
 
 const geistSans = Geist({
@@ -38,6 +39,7 @@ export default function RootLayout({
           <AppHeader />
           {children}
           <AppFooter />
+          <Toaster position="bottom-center"/>
         </body>
       </CartProvider>
     </html>
