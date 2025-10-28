@@ -30,7 +30,7 @@ export function SheetDemo() {
             </SheetTrigger>
             <SheetContent>
                 <SheetHeader>
-                    <SheetTitle>My cart</SheetTitle>
+                    <SheetTitle className='text-lg'>My Cart</SheetTitle>
                 </SheetHeader>
                 <div className={`grid flex-1 auto-rows-min gap-6 px-4 ${cart.cart.length <= 2 ? 'overflow-hidden' : 'overflow-scroll'}`}>
                     <div className="grid gap-3">
