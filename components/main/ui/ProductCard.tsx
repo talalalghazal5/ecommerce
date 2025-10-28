@@ -13,7 +13,7 @@ type QuantitySelectorProps = {
     onDecrement: () => void;
 }
 
-const QuantitySelector = ({ quantity, onIncrement, onDecrement }: QuantitySelectorProps) => {
+export const QuantitySelector = ({ quantity, onIncrement, onDecrement }: QuantitySelectorProps) => {
     return (
         <div className="flex">
             <Button size={'icon-sm'} variant={'outline'} onClick={onDecrement} className='rounded-br-none rounded-tr-none'><FontAwesomeIcon icon={faMinus}></FontAwesomeIcon></Button>
