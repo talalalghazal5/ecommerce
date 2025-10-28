@@ -15,6 +15,8 @@ import { QuantitySelector } from "../ui/ProductCard"
 import { useContext, useState } from "react"
 import { useCart } from "@/contexts/CartContext"
 import Image from "next/image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTrash } from "@fortawesome/free-solid-svg-icons"
 
 
 export function CartItemCard({ item }: { item: CartItem }) {
@@ -45,18 +47,22 @@ export function CartItemCard({ item }: { item: CartItem }) {
             return newQty;
         });
     }
+    const handleDeletion = () => {
+        cart.removeFromCart(item.id);
+    }
     return (
         <div className="flex w-full max-w-md flex-col gap-6">
             <Item variant="outline">
                 <ItemContent>
-                    <ItemMedia variant={"image"}><Image src={item.product.imagepath} alt="product-image" width={100} height={100}></Image></ItemMedia>
-                    <ItemTitle>{item.product.title}</ItemTitle>
+                    <ItemTitle  ><Image src={item.product.imagepath} alt="product-image" width={100} height={100}></Image></ItemTitle>
+                    <ItemTitle className="font-semibold">{item.product.title}</ItemTitle>
                     <ItemDescription>
                         ${item.product.price}
                     </ItemDescription>
                 </ItemContent>
                 <ItemActions>
                     <QuantitySelector quantity={quantity} onIncrement={handleQtyIncrement} onDecrement={handleQtyDecrement} />
+                    <Button size={'icon-sm'} variant={'secondary'} className="cursor-pointer" onClick={handleDeletion} title="Delete from cart"><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button>
                 </ItemActions>
             </Item>
         </div>
