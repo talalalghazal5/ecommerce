@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from "next/image";
-import heroImage from '../public/images/product006.png';
-import secondHeroImage from '../public/images/product009.png';
-import thirdHeroImage from '../public/images/product016.png';
-import fourthHeroImage from '../public/images/product002.png';
+import heroImage from '../../public/images/product006.png';
+import secondHeroImage from '../../public/images/product009.png';
+import thirdHeroImage from '../../public/images/product016.png';
+import fourthHeroImage from '../../public/images/product002.png';
 
 export default function HeroImage() {
   return (
