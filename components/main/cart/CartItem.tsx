@@ -17,6 +17,7 @@ import { useCart } from "@/contexts/CartContext"
 import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
+import { toast } from "sonner"
 
 
 export function CartItemCard({ item }: { item: CartItem }) {
@@ -29,7 +30,7 @@ export function CartItemCard({ item }: { item: CartItem }) {
             const newQty = prev + 1;
             setTimeout(() => {
                 cart.updateQuantity(item.id, newQty);
-            }, 500)
+            }, 1000)
             return newQty;
         });
     }
@@ -37,13 +38,15 @@ export function CartItemCard({ item }: { item: CartItem }) {
         setQuantity(prev => {
             if (prev === 1) {
                 // remove item from cart when decrementing from 1
-                cart.removeFromCart(item.id);
+                setTimeout(() => {
+                    cart.removeFromCart(item.id);
+                }, 200)
                 return 1;
             }
             const newQty = Math.max(1, prev - 1);
             setTimeout(() => {
                 cart.updateQuantity(item.id, newQty);
-            }, 500)
+            }, 1000)
             return newQty;
         });
     }
@@ -54,7 +57,7 @@ export function CartItemCard({ item }: { item: CartItem }) {
         <div className="flex w-full max-w-md flex-col gap-6">
             <Item variant="outline">
                 <ItemContent>
-                    <ItemTitle  ><Image src={item.product.imagepath} alt="product-image" width={100} height={100}></Image></ItemTitle>
+                    <ItemTitle><Image src={item.product.imagepath} alt="product-image" width={100} height={100}></Image></ItemTitle>
                     <ItemTitle className="font-semibold">{item.product.title}</ItemTitle>
                     <ItemDescription>
                         ${item.product.price}
