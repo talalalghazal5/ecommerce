@@ -38,7 +38,7 @@ export function SheetDemo() {
                 <SheetHeader>
                     <SheetTitle className='text-lg'>My Cart</SheetTitle>
                     {
-                        cart.cart.length !== 0 && <DeletionAlert onClick={cart.clearCart}><Button variant={'secondary'} className='bg-red-200 text-red-700'>Clear cart <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button></DeletionAlert>
+                        cart.cart.length !== 0 && <DeletionAlert onClick={cart.clearCart}><Button variant={'secondary'} className='bg-red-200 text-red-700 cursor-pointer'>Clear cart <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button></DeletionAlert>
                     }
                 </SheetHeader>
                 <div className={`grid flex-1 auto-rows-min gap-6 px-4 ${cart.cart.length <= 2 ? 'overflow-hidden' : 'overflow-scroll'}`}>
@@ -60,7 +60,7 @@ export function SheetDemo() {
                         <h2 className='font-semibold'>Total Cost:</h2>
                         <h2 className='font-semibold'>${cart.total}</h2>
                     </div>
-                    <Button type="submit">Checkout</Button>
+                    <Button type="submit" className='cursor-pointer'>Checkout</Button>
                 </SheetFooter>
             </SheetContent>
         </Sheet>
