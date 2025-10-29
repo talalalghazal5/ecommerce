@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Navbar } from './Navbar'
 import Searchbar from './Searchbar'
 import { Button } from './ui/button'
@@ -20,9 +20,14 @@ import {
 import { useCart } from '@/contexts/CartContext'
 import { CartItemCard } from './main/cart/CartItem'
 import { EmptySection } from './main/cart/EmptySection'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 export function SheetDemo() {
     const cart = useCart();
+    useEffect(() => {
+        cart.calculateTotal();
+    }, [cart, cart.total])
     return (
         <Sheet>
             <SheetTrigger asChild>
@@ -31,10 +36,13 @@ export function SheetDemo() {
             <SheetContent>
                 <SheetHeader>
                     <SheetTitle className='text-lg'>My Cart</SheetTitle>
+                    {
+                        cart.cart.length !== 0 && <Button variant={'secondary'} className='bg-red-200 text-red-700' onClick={cart.clearCart}>Clear cart <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button>
+                    }
                 </SheetHeader>
                 <div className={`grid flex-1 auto-rows-min gap-6 px-4 ${cart.cart.length <= 2 ? 'overflow-hidden' : 'overflow-scroll'}`}>
                     <div className="grid gap-3">
-                        {cart.cart.length === 0 && <EmptySection/>}
+                        {cart.cart.length === 0 && <EmptySection />}
                         {
                             cart.cart.map((item) => (
                                 <CartItemCard key={item.id} item={item} />
@@ -47,10 +55,11 @@ export function SheetDemo() {
                     </div>
                 </div>
                 <SheetFooter>
-                    <Button type="submit">Save changes</Button>
-                    <SheetClose asChild>
-                        <Button variant="outline">Close</Button>
-                    </SheetClose>
+                    <div className="flex justify-between">
+                        <h2 className='font-semibold'>Total Cost:</h2>
+                        <h2 className='font-semibold'>${cart.total}</h2>
+                    </div>
+                    <Button type="submit">Checkout</Button>
                 </SheetFooter>
             </SheetContent>
         </Sheet>
