@@ -1,24 +1,19 @@
-'use client'
-import { BadgeCheckIcon, ChevronRightIcon } from "lucide-react"
-
+ 'use client'
 import { Button } from "@/components/ui/button"
 import {
     Item,
     ItemActions,
     ItemContent,
     ItemDescription,
-    ItemMedia,
     ItemTitle,
 } from "@/components/ui/item"
-import { CartItem, Product } from "@/data/types"
+import { CartItem } from "@/data/types"
 import { QuantitySelector } from "../ui/ProductCard"
-import { useContext, useEffect, useState } from "react"
+import { useState } from "react"
 import { useCart } from "@/contexts/CartContext"
 import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
-import { toast } from "sonner"
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
 import DeletionAlert from "./DeletionAlert"
 import { Separator } from "@/components/ui/separator"
 
@@ -29,7 +24,6 @@ export function CartItemCard({ item }: { item: CartItem }) {
     const totalForItem = item.product.price * quantity
 
     const handleQtyIncrement = () => {
-        // persist change to context and update local state
         setQuantity(prev => {
             const newQty = prev + 1;
             setTimeout(() => {
@@ -41,7 +35,6 @@ export function CartItemCard({ item }: { item: CartItem }) {
     const handleQtyDecrement = () => {
         setQuantity(prev => {
             if (prev === 1) {
-                // remove item from cart when decrementing from 1
                 setTimeout(() => {
                     cart.removeFromCart(item.id);
                 }, 200)
@@ -58,11 +51,7 @@ export function CartItemCard({ item }: { item: CartItem }) {
         cart.removeFromCart(item.id);
     }
 
-    // const deletionDialog = (): React.ReactNode => {
-    //     return (
-
-    //     )
-    // }
+    
 
     return (
         <div className="flex w-full max-w-md flex-col gap-6">

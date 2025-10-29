@@ -31,7 +31,6 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         setCart((prevCart) => {
             const existing = prevCart.find(i => i.id === item.id);
             if (existing) {
-                // merge by increasing quantity
                 return prevCart.map(i => i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i);
             }
             return [...prevCart, item];

@@ -1,5 +1,4 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { StaticImageData } from "next/image";
 
 export type Category = {
     id: string;

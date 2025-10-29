@@ -9,9 +9,7 @@ import AppLogo from './AppLogo'
 
 import {
     Sheet,
-    SheetClose,
     SheetContent,
-    SheetDescription,
     SheetFooter,
     SheetHeader,
     SheetTitle,
