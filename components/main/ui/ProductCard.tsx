@@ -13,12 +13,13 @@ type QuantitySelectorProps = {
     quantity: number;
     onIncrement: () => void;
     onDecrement: () => void;
+    isProductCard?: boolean;
 }
 
-export const QuantitySelector = ({ quantity, onIncrement, onDecrement }: QuantitySelectorProps) => {
+export const QuantitySelector = ({ quantity, onIncrement, onDecrement, isProductCard }: QuantitySelectorProps) => {
     return (
         <div className="flex">
-            {quantity === 1 ? <DeletionAlert onClick={onDecrement}><Button size={'icon-sm'} variant={'outline'} className='rounded-br-none rounded-tr-none'><FontAwesomeIcon icon={faMinus}></FontAwesomeIcon></Button>
+            {quantity === 1 && !isProductCard ? <DeletionAlert onClick={onDecrement}><Button size={'icon-sm'} variant={'outline'} className='rounded-br-none rounded-tr-none'><FontAwesomeIcon icon={faMinus}></FontAwesomeIcon></Button>
             </DeletionAlert> : <Button size={'icon-sm'} variant={'outline'} onClick={onDecrement} className='rounded-br-none rounded-tr-none'><FontAwesomeIcon icon={faMinus}></FontAwesomeIcon></Button>
             }
             <div className="w-[30px] text-center flex justify-center items-center border">{quantity}</div>
@@ -57,7 +58,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </CardContent>
             <CardFooter className='justify-between'>
                 <Button onClick={handleAddToCart}>Add to cart</Button>
-                <QuantitySelector quantity={quantity} onIncrement={handleQtyIncrement} onDecrement={handleQtyDecrement} />
+                <QuantitySelector isProductCard quantity={quantity} onIncrement={handleQtyIncrement} onDecrement={handleQtyDecrement} />
             </CardFooter>
         </Card>
     )
