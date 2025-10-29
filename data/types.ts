@@ -17,6 +17,7 @@ export type Product = {
     price: number;
     description: string;
     imagepath: string;
+    categoryId: string;
 }
 
 export type CartItem = {
