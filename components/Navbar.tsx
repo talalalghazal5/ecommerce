@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react"
 import 'boxicons/css/boxicons.min.css'
 
 import {
@@ -28,8 +27,7 @@ function useIsMobile(breakpoint = 768) {
             setIsMobile(window.innerWidth < breakpoint)
         }
 
-        // initialize and subscribe
-        onResize()
+    onResize()
         window.addEventListener("resize", onResize)
         return () => window.removeEventListener("resize", onResize)
     }, [breakpoint])
