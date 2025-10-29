@@ -5,8 +5,6 @@ import Searchbar from './Searchbar'
 import { Button } from './ui/button'
 import 'boxicons/css/boxicons.min.css'
 import AppLogo from './AppLogo'
-
-
 import {
     Sheet,
     SheetContent,
@@ -49,10 +47,6 @@ export function SheetDemo() {
                             ))
                         }
                     </div>
-                    <div className="grid gap-2">
-                        {/* <Label htmlFor="sheet-demo-username">Username</Label>
-                        <Input id="sheet-demo-username" defaultValue="@peduarte" /> */}
-                    </div>
                 </div>
                 <SheetFooter>
                     {
@@ -74,8 +68,6 @@ export function SheetDemo() {
     )
 }
 
-
-
 export default function AppHeader() {
     return (
         <header className='px-6 py-3 flex items-center backdrop-blur-3xl z-50 justify-evenly fixed w-full border-b'>
@@ -83,7 +75,6 @@ export default function AppHeader() {
             <Navbar />
             <Searchbar />
             <div className="flex gap-7">
-
                 <SheetDemo />
                 <Button size={'icon-lg'} className='rounded-full cursor-pointer bg-transparent hover:bg-muted'><i className='bx bx-user text-2xl text-black' ></i></Button>
             </div>
