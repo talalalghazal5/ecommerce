@@ -37,12 +37,12 @@ export function SheetDemo() {
             </SheetTrigger>
             <SheetContent>
                 <SheetHeader>
-                    <SheetTitle className='text-lg'>My Cart <span className='text-gray-400 text-sm'>({length} {length > 1? 'items' : 'item'})</span></SheetTitle>
+                    <SheetTitle className='text-lg'>My Cart {length !== 0 && <span className='text-gray-400 text-sm'>({length} {length > 1 ? 'items' : 'item'})</span>} </SheetTitle>
                     {
                         cart.cart.length !== 0 && <DeletionAlert onClick={cart.clearCart}><Button variant={'secondary'} className='bg-red-200 text-red-700 cursor-pointer'>Clear cart <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button></DeletionAlert>
                     }
                 </SheetHeader>
-                <div className={`grid flex-1 auto-rows-min gap-6 px-4 ${cart.cart.length <= 2 ? 'overflow-hidden' : 'overflow-scroll'}`}>
+                <div className={`px-4 ${cart.cart.length <= 2 ? 'overflow-hidden' : 'overflow-scroll'}`}>
                     <div className="grid gap-3">
                         {cart.cart.length === 0 && <EmptySection />}
                         {
@@ -57,11 +57,13 @@ export function SheetDemo() {
                     </div>
                 </div>
                 <SheetFooter>
-                    <div className="flex justify-between">
-                        <h2 className='font-semibold'>Total Cost:</h2>
-                        <h2 className='font-semibold'>${cart.total}</h2>
-                    </div>
-                    <Button type="submit" className='cursor-pointer'>Checkout</Button>
+                    {
+                        length !== 0 && <div className="flex justify-between">
+                            <h2 className='font-semibold'>Total Cost:</h2>
+                            <h2 className='font-semibold'>${cart.total}</h2>
+                        </div>
+                    }
+                    <Button type="submit" className='cursor-pointer' disabled={length === 0}>Checkout</Button>
                 </SheetFooter>
             </SheetContent>
         </Sheet>
