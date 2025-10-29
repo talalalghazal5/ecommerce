@@ -4,11 +4,11 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
-export default function DeletionAlert({onClick} : {onClick : () => void}) {
+export default function DeletionAlert({onClick, children} : {onClick : () => void, children: React.ReactNode}) {
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button size={'icon-sm'} variant={'secondary'} className="cursor-pointer"  title="Delete from cart"><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button>
+                {children}
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>

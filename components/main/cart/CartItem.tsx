@@ -58,7 +58,7 @@ export function CartItemCard({ item }: { item: CartItem }) {
 
     // const deletionDialog = (): React.ReactNode => {
     //     return (
-            
+
     //     )
     // }
 
@@ -71,10 +71,12 @@ export function CartItemCard({ item }: { item: CartItem }) {
                     <ItemDescription>
                         ${item.product.price}
                     </ItemDescription>
-                </ItemContent> 
+                </ItemContent>
                 <ItemActions>
                     <QuantitySelector quantity={quantity} onIncrement={handleQtyIncrement} onDecrement={handleQtyDecrement} />
-                    <DeletionAlert onClick={handleDeletion}/>
+                    <DeletionAlert onClick={handleDeletion}>
+                        <Button size={'icon-sm'} variant={'secondary'} className="cursor-pointer" title="Delete from cart"><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button>
+                    </DeletionAlert>
                 </ItemActions>
             </Item>
         </div>
