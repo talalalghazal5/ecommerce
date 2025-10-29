@@ -18,6 +18,8 @@ import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
 import { toast } from "sonner"
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
+import DeletionAlert from "./DeletionAlert"
 
 
 export function CartItemCard({ item }: { item: CartItem }) {
@@ -53,6 +55,13 @@ export function CartItemCard({ item }: { item: CartItem }) {
     const handleDeletion = () => {
         cart.removeFromCart(item.id);
     }
+
+    // const deletionDialog = (): React.ReactNode => {
+    //     return (
+            
+    //     )
+    // }
+
     return (
         <div className="flex w-full max-w-md flex-col gap-6">
             <Item variant="outline">
@@ -62,12 +71,13 @@ export function CartItemCard({ item }: { item: CartItem }) {
                     <ItemDescription>
                         ${item.product.price}
                     </ItemDescription>
-                </ItemContent>
+                </ItemContent> 
                 <ItemActions>
                     <QuantitySelector quantity={quantity} onIncrement={handleQtyIncrement} onDecrement={handleQtyDecrement} />
-                    <Button size={'icon-sm'} variant={'secondary'} className="cursor-pointer" onClick={handleDeletion} title="Delete from cart"><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button>
+                    <DeletionAlert onClick={handleDeletion}/>
                 </ItemActions>
             </Item>
         </div>
     )
 }
+
