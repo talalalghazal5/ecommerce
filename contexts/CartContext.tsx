@@ -44,7 +44,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     }
     const clearCart = () => {
         setCart([]);
-        toast("Cart cleared")
+        toast.success("Cart cleared")
     }
     const calculateTotal = () => {
         setTotal(cart.reduce((total, item) => total + item.product.price * item.quantity, 0));
