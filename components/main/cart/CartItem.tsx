@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/item"
 import { CartItem, Product } from "@/data/types"
 import { QuantitySelector } from "../ui/ProductCard"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useCart } from "@/contexts/CartContext"
 import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -25,6 +25,7 @@ import DeletionAlert from "./DeletionAlert"
 export function CartItemCard({ item }: { item: CartItem }) {
     const cart = useCart()
     const [quantity, setQuantity] = useState<number>(item.quantity);
+    const totalForItem = item.product.price * quantity
 
     const handleQtyIncrement = () => {
         // persist change to context and update local state
@@ -68,9 +69,10 @@ export function CartItemCard({ item }: { item: CartItem }) {
                 <ItemContent>
                     <ItemTitle><Image src={item.product.imagepath} alt="product-image" width={100} height={100}></Image></ItemTitle>
                     <ItemTitle className="font-semibold">{item.product.title}</ItemTitle>
-                    <ItemDescription>
+                    <ItemDescription className="">
                         ${item.product.price}
                     </ItemDescription>
+                    <ItemDescription className="text-end">Total: ${totalForItem}</ItemDescription>
                 </ItemContent>
                 <ItemActions>
                     <QuantitySelector quantity={quantity} onIncrement={handleQtyIncrement} onDecrement={handleQtyDecrement} />
