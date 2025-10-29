@@ -13,7 +13,7 @@ export default function DeletionAlert({onClick, children} : {onClick : () => voi
             <AlertDialogContent>
                 <AlertDialogHeader>
                     <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-                    <AlertDialogDescription>This action will remove the item from cart.</AlertDialogDescription>
+                    <AlertDialogDescription>This action will remove an item or clear the cart.</AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel>
