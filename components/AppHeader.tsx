@@ -26,6 +26,7 @@ import DeletionAlert from './main/cart/DeletionAlert'
 
 export function SheetDemo() {
     const cart = useCart();
+    const length = cart.cart.length;
     useEffect(() => {
         cart.calculateTotal();
     }, [cart, cart.total])
@@ -36,7 +37,7 @@ export function SheetDemo() {
             </SheetTrigger>
             <SheetContent>
                 <SheetHeader>
-                    <SheetTitle className='text-lg'>My Cart</SheetTitle>
+                    <SheetTitle className='text-lg'>My Cart <span className='text-gray-400 text-sm'>({length} {length > 1? 'items' : 'item'})</span></SheetTitle>
                     {
                         cart.cart.length !== 0 && <DeletionAlert onClick={cart.clearCart}><Button variant={'secondary'} className='bg-red-200 text-red-700 cursor-pointer'>Clear cart <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button></DeletionAlert>
                     }
