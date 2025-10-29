@@ -71,7 +71,7 @@ export function CartItemCard({ item }: { item: CartItem }) {
                     <ItemTitle><Image src={item.product.imagepath} alt="product-image" width={100} height={100}></Image></ItemTitle>
                     <ItemTitle className="font-semibold">{item.product.title}</ItemTitle>
                     <ItemDescription className="">
-                        ${item.product.price}
+                        ${item.product.price} x {quantity}
                     </ItemDescription>
                     <Separator />
                     <ItemDescription className="">Total: ${totalForItem}</ItemDescription>
