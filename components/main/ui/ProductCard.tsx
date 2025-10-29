@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Product } from '@/data/types';
 import { useCart } from '@/contexts/CartContext';
+import DeletionAlert from '../cart/DeletionAlert';
 
 type QuantitySelectorProps = {
     quantity: number;
@@ -17,7 +18,9 @@ type QuantitySelectorProps = {
 export const QuantitySelector = ({ quantity, onIncrement, onDecrement }: QuantitySelectorProps) => {
     return (
         <div className="flex">
-            <Button size={'icon-sm'} variant={'outline'} onClick={onDecrement} className='rounded-br-none rounded-tr-none'><FontAwesomeIcon icon={faMinus}></FontAwesomeIcon></Button>
+            {quantity === 1 ? <DeletionAlert onClick={onDecrement}><Button size={'icon-sm'} variant={'outline'} className='rounded-br-none rounded-tr-none'><FontAwesomeIcon icon={faMinus}></FontAwesomeIcon></Button>
+            </DeletionAlert> : <Button size={'icon-sm'} variant={'outline'} onClick={onDecrement} className='rounded-br-none rounded-tr-none'><FontAwesomeIcon icon={faMinus}></FontAwesomeIcon></Button>
+            }
             <div className="w-[30px] text-center flex justify-center items-center border">{quantity}</div>
             <Button size={'icon-sm'} variant={'outline'} onClick={onIncrement} className='rounded-bl-none rounded-tl-none '><FontAwesomeIcon icon={faPlus}></FontAwesomeIcon></Button>
         </div>
@@ -39,7 +42,7 @@ export default function ProductCard({ product }: { product: Product }) {
         const cartItem = { id: product.id, product: product, quantity: quantity };
         if (cart.cart.includes(cartItem)) setQuantity(quantity + 1)
         cart.addToCart(cartItem);
-    } 
+    }
     return (
         <Card>
             <CardHeader>
