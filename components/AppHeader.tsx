@@ -33,15 +33,15 @@ export function SheetDemo() {
             <SheetTrigger asChild>
                 <Button size={'icon-lg'} className='rounded-full cursor-pointer bg-transparent hover:bg-muted'><i className='bx bx-cart text-2xl text-black' ></i></Button>
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent className='gap-1'>
                 <SheetHeader>
                     <SheetTitle className='text-lg'>My Cart {length !== 0 && <span className='text-gray-400 text-sm'>({length} {length > 1 ? 'items' : 'item'})</span>} </SheetTitle>
                     {
-                        cart.cart.length !== 0 && <DeletionAlert onClick={cart.clearCart}><Button variant={'secondary'} className='bg-red-200 text-red-700 cursor-pointer'>Clear cart <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button></DeletionAlert>
+                        cart.cart.length !== 0 && <DeletionAlert onClick={cart.clearCart}><Button variant={'secondary'} className='bg-red-100 text-red-700 cursor-pointer'><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon> Clear cart</Button></DeletionAlert>
                     }
                 </SheetHeader>
                 <div className={`px-4 ${cart.cart.length <= 2 ? 'overflow-hidden' : 'overflow-scroll'}`}>
-                    <div className="grid gap-3">
+                    <div className="grid gap-2">
                         {cart.cart.length === 0 && <EmptySection />}
                         {
                             cart.cart.map((item) => (
@@ -49,17 +49,23 @@ export function SheetDemo() {
                             ))
                         }
                     </div>
-                    <div className="grid gap-3">
+                    <div className="grid gap-2">
                         {/* <Label htmlFor="sheet-demo-username">Username</Label>
                         <Input id="sheet-demo-username" defaultValue="@peduarte" /> */}
                     </div>
                 </div>
                 <SheetFooter>
                     {
-                        length !== 0 && <div className="flex justify-between">
+                        length !== 0 && (<>
+                        <div className="flex justify-between text-gray-500">
+                            <h2>Number of items:</h2>
+                            <h2>{length}</h2>
+                        </div>
+                        <div className="flex justify-between">
                             <h2 className='font-semibold'>Total Cost:</h2>
                             <h2 className='font-semibold'>${cart.total}</h2>
                         </div>
+                        </>)
                     }
                     <Button type="submit" className='cursor-pointer' disabled={length === 0}>Checkout</Button>
                 </SheetFooter>
