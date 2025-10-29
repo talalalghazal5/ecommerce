@@ -7,6 +7,8 @@ export default function CategoryPage() {
     const params = useParams<{categoryId: string}>();
     const categoryId = params.categoryId;
     const category = components.find(category => category.id === categoryId);
+    console.log(categoryId);
+    
     return (
         <main className='min-h-screen flex flex-col space-y-3 pt-20  px-10'>
             <div className={`w-full h-[150px] bg-linear-to-tr from-${category?.color} to-yellow-300 flex justify-center flex-col rounded-3xl px-8`}>

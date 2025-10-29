@@ -29,7 +29,7 @@ export function CategoryCard({ category }: { category: Category }) {
                 </CardAction>   
             </CardHeader>
             <CardContent>
-                <Button className={`mt-4 bg-${category.color} cursor-pointer`} onClick={() => router.push(`/${category.id}`)}>Shop now</Button>
+                <Button className={`mt-4 bg-${category.color} cursor-pointer`} onClick={() => router.push(`/categories/${category.id}`)}>Shop now</Button>
             </CardContent>
         </Card> 
     )
