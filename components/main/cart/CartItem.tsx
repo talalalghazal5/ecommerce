@@ -20,6 +20,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons"
 import { toast } from "sonner"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
 import DeletionAlert from "./DeletionAlert"
+import { Separator } from "@/components/ui/separator"
 
 
 export function CartItemCard({ item }: { item: CartItem }) {
@@ -72,7 +73,8 @@ export function CartItemCard({ item }: { item: CartItem }) {
                     <ItemDescription className="">
                         ${item.product.price}
                     </ItemDescription>
-                    <ItemDescription className="text-end">Total: ${totalForItem}</ItemDescription>
+                    <Separator />
+                    <ItemDescription className="">Total: ${totalForItem}</ItemDescription>
                 </ItemContent>
                 <ItemActions>
                     <QuantitySelector quantity={quantity} onIncrement={handleQtyIncrement} onDecrement={handleQtyDecrement} />
