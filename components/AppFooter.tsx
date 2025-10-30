@@ -27,39 +27,39 @@ export default function AppFooter() {
             <div>
                 <div className="flex space-x-8">
                     <div>
-                        <h3 className="font-bold text-lg mb-2">Company</h3>
-                        <Link href="/about" className="text-md text-gray-500 block">About</Link>
-                        <Link href="/careers" className="text-md text-gray-500 block">Careers</Link>
-                        <Link href="/press" className="text-md text-gray-500 block">Press</Link>
-                        <Link href="/contact" className="text-md text-gray-500 block">Contact</Link>
+                        <h3 className="font-bold mb-2">Company</h3>
+                        <Link href="/about" className="text-sm text-gray-500 block">About</Link>
+                        <Link href="/careers" className="text-sm text-gray-500 block">Careers</Link>
+                        <Link href="/press" className="text-sm text-gray-500 block">Press</Link>
+                        <Link href="/contact" className="text-sm text-gray-500 block">Contact</Link>
                     </div>
 
                     <div>
-                        <h3 className="font-bold text-lg mb-2">Products</h3>
-                        <Link href="/products" className="text-md text-gray-500 block">All Products</Link>
-                        <Link href="/pricing" className="text-md text-gray-500 block">Pricing</Link>
-                        <Link href="/demo" className="text-md text-gray-500 block">Demo</Link>
+                        <h3 className="font-bold mb-2">Products</h3>
+                        <Link href="/products" className="text-sm text-gray-500 block">All Products</Link>
+                        <Link href="/pricing" className="text-sm text-gray-500 block">Pricing</Link>
+                        <Link href="/demo" className="text-sm text-gray-500 block">Demo</Link>
                     </div>
 
                     <div>
-                        <h3 className="font-bold text-lg mb-2">Resources</h3>
-                        <Link href="/docs" className="text-md text-gray-500 block">Documentation</Link>
-                        <Link href="/blog" className="text-md text-gray-500 block">Blog</Link>
-                        <Link href="/community" className="text-md text-gray-500 block">Community</Link>
+                        <h3 className="font-bold mb-2">Resources</h3>
+                        <Link href="/docs" className="text-sm text-gray-500 block">Documentation</Link>
+                        <Link href="/blog" className="text-sm text-gray-500 block">Blog</Link>
+                        <Link href="/community" className="text-sm text-gray-500 block">Community</Link>
                     </div>
 
                     <div>
-                        <h3 className="font-bold text-lg mb-2">Support</h3>
-                        <Link href="/help" className="text-md text-gray-500 block">Help Center</Link>
-                        <Link href="/faq" className="text-md text-gray-500 block">FAQ</Link>
-                        <Link href="/support" className="text-md text-gray-500 block">Contact Support</Link>
+                        <h3 className="font-bold mb-2">Support</h3>
+                        <Link href="/help" className="text-sm text-gray-500 block">Help Center</Link>
+                        <Link href="/faq" className="text-sm text-gray-500 block">FAQ</Link>
+                        <Link href="/support" className="text-sm text-gray-500 block">Contact Support</Link>
                     </div>
 
                     <div>
-                        <h3 className="font-bold text-lg mb-2">Legal</h3>
-                        <Link href="/privacy" className="text-md text-gray-500 block">Privacy Policy</Link>
-                        <Link href="/terms" className="text-md text-gray-500 block">Terms of Service</Link>
-                        <Link href="/sitemap.xml" className="text-md text-gray-500 block">Sitemap</Link>
+                        <h3 className="font-bold mb-2">Legal</h3>
+                        <Link href="/privacy" className="text-sm text-gray-500 block">Privacy Policy</Link>
+                        <Link href="/terms" className="text-sm text-gray-500 block">Terms of Service</Link>
+                        <Link href="/sitemap.xml" className="text-sm text-gray-500 block">Sitemap</Link>
                     </div>
                     <div className="flex flex-col justify-between">
                         <div className="flex space-x-1 text-gray-500">

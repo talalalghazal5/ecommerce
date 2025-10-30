@@ -1,3 +1,4 @@
+'use client'
 import { Button } from "@/components/ui/button"
 import {
     Card,
@@ -10,8 +11,10 @@ import {
 import { Category } from "@/data/types"
 import 'boxicons/css/boxicons.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/navigation";
 
 export function CategoryCard({ category }: { category: Category }) {
+    const router = useRouter();
     return (
         <Card className={`w-full border-b-4 border-${category.color}`}>
             <CardHeader>
@@ -26,7 +29,7 @@ export function CategoryCard({ category }: { category: Category }) {
                 </CardAction>   
             </CardHeader>
             <CardContent>
-                <Button className={`mt-4 bg-${category.color} cursor-pointer`}>Shop now</Button>
+                <Button className={`mt-4 bg-${category.color} cursor-pointer`} onClick={() => router.push(`/categories/${category.id}`)}>Shop now</Button>
             </CardContent>
         </Card> 
     )

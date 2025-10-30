@@ -19,6 +19,7 @@ import { EmptySection } from './main/cart/EmptySection'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import DeletionAlert from './main/cart/DeletionAlert'
+import { Badge } from './ui/badge'
 
 export function SheetDemo() {
     const cart = useCart();
@@ -29,7 +30,10 @@ export function SheetDemo() {
     return (
         <Sheet>
             <SheetTrigger asChild>
-                <Button size={'icon-lg'} className='rounded-full cursor-pointer bg-transparent hover:bg-muted'><i className='bx bx-cart text-2xl text-black' ></i></Button>
+                <Button size={'icon-lg'} className='rounded-full text-center cursor-pointer bg-transparent hover:bg-muted relative'>
+                    {length !== 0 && <Badge variant={'destructive'} className='absolute top-0 right-[-1]'>{length}</Badge>}
+                    <i className='bx bx-cart text-3xl text-black' ></i>
+                </Button>
             </SheetTrigger>
             <SheetContent className='gap-1'>
                 <SheetHeader>
@@ -76,7 +80,7 @@ export default function AppHeader() {
             <Searchbar />
             <div className="flex gap-7">
                 <SheetDemo />
-                <Button size={'icon-lg'} className='rounded-full cursor-pointer bg-transparent hover:bg-muted'><i className='bx bx-user text-2xl text-black' ></i></Button>
+                <Button size={'icon-lg'} className='rounded-full cursor-pointer bg-transparent hover:bg-muted'><i className='bx bx-user text-3xl text-black' ></i></Button>
             </div>
         </header>
     )
