@@ -8,7 +8,7 @@ export default function ProductsGrid() {
             <h1 className="text-3xl text-center font-bold mt-3 mb-10">Featured Products</h1>
             <div className="grid grid-cols-3 w-full lg:w-3/4 gap-5">
                 {
-                    products.map((product) => (
+                    products.splice(0,6).map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))
                 }
