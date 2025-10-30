@@ -11,7 +11,7 @@ export default function CategoryPage() {
     
     return (
         <main className='min-h-screen flex flex-col space-y-3 pt-20  px-10'>
-            <div className={`w-full h-[150px] bg-linear-to-tr from-${category?.color} to-yellow-300 flex justify-center flex-col rounded-3xl px-8`}>
+            <div className={`w-full h-[150px] bg-linear-to-tr from-orange-500 to-yellow-300 flex justify-center flex-col rounded-3xl px-8`}>
                 <h2 className='text-4xl font-bold text-white'>{category?.title}</h2>
                 <h3 className='mt-3 text-white'>{category?.description}</h3>
             </div>
