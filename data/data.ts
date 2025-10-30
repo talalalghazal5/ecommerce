@@ -13,7 +13,7 @@ export const components: Category[] = [
   {
     id: "laptops",
     title: "Laptops",
-    href: "/laptops",
+    href: "/categories/laptops",
     description:
       "Find the best laptops that cover all your needs, the best value-price options.",
     colorClass: "hover:bg-chart-1/30 hover:text-chart-1",
@@ -23,7 +23,7 @@ export const components: Category[] = [
   {
     id: "phones",
     title: "Phones",
-    href: "/phones",
+    href: "/categories/phones",
     description: "World's most famous mobile phones and the best quality.",
     colorClass: "hover:bg-chart-2/30 hover:text-chart-2",
     color: "chart-2",
@@ -32,7 +32,7 @@ export const components: Category[] = [
   {
     id: "smartwatches",
     title: "Smart watches",
-    href: "/smartwatches",
+    href: "/categories/smartwatches",
     description:
       "Keep control in your health and do your tasks on the go, all with a smartwatch with you.",
     colorClass: "hover:bg-chart-3/30 hover:text-chart-3",
@@ -42,7 +42,7 @@ export const components: Category[] = [
   {
     id: "headphones",
     title: "Headphones",
-    href: "/headphones",
+    href: "/categories/headphones",
     description: "Turn your hearing experience into something different.",
     colorClass: "hover:bg-chart-4/30 hover:text-chart-4",
     color: "chart-4",
@@ -51,7 +51,7 @@ export const components: Category[] = [
   {
     id: "tablets",
     title: "Tablets",
-    href: "/tablets",
+    href: "/categories/tablets",
     description:
       "Portable, powerful tablets that balance productivity and entertainment.",
     colorClass: "hover:bg-chart-5/30 hover:text-chart-5",
@@ -61,7 +61,7 @@ export const components: Category[] = [
   {
     id: "cameras",
     title: "Cameras",
-    href: "/cameras",
+    href: "/categories/cameras",
     description: "Capture life's moments in stunning detail.",
     colorClass: "hover:bg-chart-6/30 hover:text-chart-6",
     color: "chart-6",
