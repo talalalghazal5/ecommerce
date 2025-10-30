@@ -165,7 +165,7 @@ export const products: Product[] = [
     title: "Lenovo Tab P12 Pro",
     description: "Versatile Android tablet for work and entertainment",
     price: 599,
-    imagepath: "/images/product025.png",
+    imagepath: "/images/product021.png",
     href: "/products/lenovo-tab-p12-pro",
     categoryId: "tablets",
   },
