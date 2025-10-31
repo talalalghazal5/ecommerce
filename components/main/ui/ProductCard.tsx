@@ -45,7 +45,7 @@ export default function ProductCard({ product, width, height }: { product: Produ
         cart.addToCart(cartItem);
     }
     return (
-        <Card className={ `w-[${width}px] h-[${height}px]`}>
+        <Card>
             <CardHeader>
                 <CardTitle>
                     <Image src={product.imagepath} alt='' width={300} height={300}></Image>
