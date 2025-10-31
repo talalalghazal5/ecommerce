@@ -7,6 +7,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import AppFooter from "@/components/AppFooter";
 import { CartProvider } from "@/contexts/CartContext";
 import { Toaster } from "sonner";
+import { SessionProvider } from "next-auth/react";
 config.autoAddCss = false;
 
 const geistSans = Geist({
@@ -32,16 +33,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <CartProvider>
-        <body
-          className={`${geistSans.className} ${rougeScript.variable} antialiased`}
-        >
-          <AppHeader />
-          {children}
-          <AppFooter />
-          <Toaster position="bottom-center"/>
-        </body>
-      </CartProvider>
+      <SessionProvider>
+        <CartProvider>
+          <body
+            className={`${geistSans.className} ${rougeScript.variable} antialiased`}
+          >
+            <AppHeader />
+            {children}
+            <AppFooter />
+            <Toaster position="bottom-center" />
+          </body>
+        </CartProvider>
+      </SessionProvider>
     </html>
   );
 }
