@@ -28,7 +28,7 @@ export const QuantitySelector = ({ quantity, onIncrement, onDecrement, isProduct
     )
 }
 
-export default function ProductCard({ product, width, height }: { product: Product, width?: number, height?: number }) {
+export default function ProductCard({ product }: { product: Product, width?: number, height?: number }) {
     const [quantity, setQuantity] = useState<number>(1);
     const cart = useCart();
 
