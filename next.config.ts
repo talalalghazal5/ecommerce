@@ -9,7 +9,8 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: false,
     remotePatterns: [
-      { protocol: 'https', hostname: '**.example-cdn.com', pathname: '/**' }
+      { protocol: 'https', hostname: '**.example-cdn.com', pathname: '/**' },
+      {protocol: 'https', hostname: 'avatars.githubusercontent.com'}
     ],
   },
   reactCompiler: true,
