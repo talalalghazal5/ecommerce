@@ -6,6 +6,6 @@ import React from 'react'
 export default function SignOutButton() {
 
     return (
-    <Button  onClick={handleSignOut}>Sign out</Button>
+        <Button  onClick={handleSignOut}>Sign out</Button>
     )
 }
