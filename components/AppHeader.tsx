@@ -16,13 +16,16 @@ import { useCart } from '@/contexts/CartContext'
 import { CartItemCard } from './main/cart/CartItem'
 import { EmptySection } from './main/cart/EmptySection'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faDoorOpen, faTrash } from '@fortawesome/free-solid-svg-icons'
 import DeletionAlert from './main/cart/DeletionAlert'
 import { Badge } from './ui/badge'
 import SignOutButton from './main/ui/SignOutButton'
 import SheetDemo from './main/SheetDemo'
 import { auth } from '@/auth'
 import UserAvatar from './main/ui/UserAvatar'
+import SigninButton from '@/app/signin/components/SigninButton'
+import { link } from 'fs'
+import Link from 'next/link'
 
 export default async function AppHeader() {
     const session = await auth();
@@ -34,7 +37,8 @@ export default async function AppHeader() {
             <Searchbar />
             <div className="flex gap-7 items-center">
                 <SheetDemo />
-                {user && <UserAvatar />}
+                {user ? <UserAvatar /> : <Link href={'/signin'}>Sign in</Link>}
+                {user && <SignOutButton />}
             </div>
         </header>
     )
