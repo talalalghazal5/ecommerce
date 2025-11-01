@@ -10,7 +10,8 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: false,
     remotePatterns: [
       { protocol: 'https', hostname: '**.example-cdn.com', pathname: '/**' },
-      {protocol: 'https', hostname: 'avatars.githubusercontent.com'}
+      {protocol: 'https', hostname: 'avatars.githubusercontent.com'},
+      {protocol: 'https', hostname: 'lh3.googleusercontent.com'}
     ],
   },
   reactCompiler: true,

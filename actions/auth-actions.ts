@@ -10,3 +10,7 @@ export const handleSignOut = async () => {
 export const handleSignIn = async () => {
   await signIn("github", { redirectTo: "/" });
 };
+
+export const signInWithGoogle = async () => {
+    await signIn("google", { redirectTo: "/" });
+}
