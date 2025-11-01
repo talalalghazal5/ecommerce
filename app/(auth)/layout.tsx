@@ -38,7 +38,6 @@ export default function MarketingLayout({
                     <body
                         className={`${geistSans.className} ${rougeScript.variable} antialiased`}
                     >
-
                         {children}
                         <Toaster position="bottom-center" />
                     </body>
