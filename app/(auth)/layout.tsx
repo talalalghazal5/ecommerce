@@ -8,6 +8,7 @@ import AppFooter from "@/components/AppFooter";
 import { CartProvider } from "@/contexts/CartContext";
 import { Toaster } from "sonner";
 import { SessionProvider } from "next-auth/react";
+import AppLogo from "@/components/AppLogo";
 config.autoAddCss = false;
 
 const geistSans = Geist({
@@ -38,6 +39,9 @@ export default function MarketingLayout({
                     <body
                         className={`${geistSans.className} ${rougeScript.variable} antialiased`}
                     >
+                        <header className="px-6 py-3 flex items-center backdrop-blur-3xl z-50 justify-between fixed w-full border-b">
+                            <AppLogo />
+                        </header>
                         {children}
                         <Toaster position="bottom-center" />
                         <AppFooter />
