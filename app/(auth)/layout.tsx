@@ -40,6 +40,7 @@ export default function MarketingLayout({
                     >
                         {children}
                         <Toaster position="bottom-center" />
+                        <AppFooter />
                     </body>
                 </CartProvider>
             </SessionProvider>
