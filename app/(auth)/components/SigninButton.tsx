@@ -7,6 +7,6 @@ import React from 'react'
 
 export default function SigninButton() {
   return (
-    <Button onClick={handleSignIn}><FontAwesomeIcon icon={faGithub}></FontAwesomeIcon> Continue with GitHub</Button>
+    <Button onClick={handleSignIn} className='w-full'><FontAwesomeIcon icon={faGithub}></FontAwesomeIcon> Continue with GitHub</Button>
   )
 }
