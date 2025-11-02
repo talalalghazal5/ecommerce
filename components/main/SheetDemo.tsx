@@ -10,8 +10,12 @@ import { Badge } from "../ui/badge";
 
 import React, { useEffect } from 'react'
 import { useCart } from "@/contexts/CartContext";
+import { useSession } from "next-auth/react";
+import { AlertDialog } from "../ui/alert-dialog";
+import NotSignedAlert from "./NotSignedAlert";
 
 export default function SheetDemo() {
+    const session = useSession();
     const cart = useCart();
     const length = cart.cart.length;
     useEffect(() => {
@@ -55,7 +59,9 @@ export default function SheetDemo() {
                             </div>
                         </>)
                     }
-                    <Button type="submit" className='cursor-pointer' disabled={length === 0}>Checkout</Button>
+                    {
+                        session.data?.user ? <Button type="submit" className='cursor-pointer' disabled={length === 0}>Checkout</Button> : <NotSignedAlert />
+                    }
                 </SheetFooter>
             </SheetContent>
         </Sheet>
