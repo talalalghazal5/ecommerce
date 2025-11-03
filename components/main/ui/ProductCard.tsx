@@ -28,7 +28,7 @@ export const QuantitySelector = ({ quantity, onIncrement, onDecrement, isProduct
     )
 }
 
-export default function ProductCard({ product, width, height }: { product: Product, width?: number, height?: number }) {
+export default function ProductCard({ product }: { product: Product, width?: number, height?: number }) {
     const [quantity, setQuantity] = useState<number>(1);
     const cart = useCart();
 
@@ -45,7 +45,7 @@ export default function ProductCard({ product, width, height }: { product: Produ
         cart.addToCart(cartItem);
     }
     return (
-        <Card className={ `w-[${width}px] h-[${height}px]`}>
+        <Card>
             <CardHeader>
                 <CardTitle>
                     <Image src={product.imagepath} alt='' width={300} height={300}></Image>

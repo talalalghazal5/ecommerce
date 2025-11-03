@@ -16,30 +16,12 @@ import {
 import { components } from "@/data/data"
 
 
-function useIsMobile(breakpoint = 768) {
-    const [isMobile, setIsMobile] = React.useState(() => {
-        if (typeof window === "undefined") return false
-        return window.innerWidth < breakpoint
-    })
 
-    React.useEffect(() => {
-        function onResize() {
-            setIsMobile(window.innerWidth < breakpoint)
-        }
-
-    onResize()
-        window.addEventListener("resize", onResize)
-        return () => window.removeEventListener("resize", onResize)
-    }, [breakpoint])
-
-    return isMobile
-}
 
 export function Navbar() {
-    const isMobile = useIsMobile()
 
     return (
-        <NavigationMenu viewport={isMobile}>
+        <NavigationMenu>
             <NavigationMenuList className="flex-wrap">
                 <NavigationMenuItem>
                     <NavigationMenuTrigger className="bg-transparent">Categories</NavigationMenuTrigger>
