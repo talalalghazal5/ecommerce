@@ -11,7 +11,6 @@ import { Badge } from "../ui/badge";
 import React, { useEffect } from 'react'
 import { useCart } from "@/contexts/CartContext";
 import { useSession } from "next-auth/react";
-import { AlertDialog } from "../ui/alert-dialog";
 import NotSignedAlert from "./NotSignedAlert";
 
 export default function SheetDemo() {

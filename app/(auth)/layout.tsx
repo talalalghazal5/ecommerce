@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Rouge_Script } from "next/font/google";
 import "../globals.css";
-import AppHeader from "@/components/AppHeader";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import AppFooter from "@/components/AppFooter";
