@@ -26,12 +26,28 @@ export default function ProductPage() {
                 <ul className=''>
                     <li className='list-disc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem officia eum cum, nesciunt nobis expedita a quae vel quisquam soluta facere ut minus culpa consequatur hic, commodi itaque repellendus eaque.</li>
                     <li className='list-disc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem officia eum cum, nesciunt nobis expedita a quae vel quisquam soluta facere ut minus culpa consequatur hic, commodi itaque repellendus eaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque esse, hic ipsam pariatur error facilis reprehenderit vitae excepturi exercitationem qui! Voluptate veritatis distinctio reiciendis, est illo quibusdam maiores similique molestias.</li>
-                    
+
                 </ul>
             </div>
-            <aside className='p-4 w-lg h-screen border-l font-semibold'>
+            <aside className='p-4 w-2xl h-screen border-l font-semibold'>
                 <h2>Product details:</h2>
-                
+                <div className="flex justify-between items-center mt-3">
+                    <h3 className='text-sm'>Processor:</h3>
+                    <h3 className='text-sm text-gray-500 font-normal'>Apple M3 Ultra</h3>
+                </div>
+                <div className="flex justify-between items-center mt-3">
+                    <h3 className='text-sm'>RAM:</h3>
+                    <h3 className='text-sm font-normal text-gray-500'>32GB </h3>
+                </div>
+                <div className="flex justify-between items-center mt-3">
+                    <h3 className='text-sm'>GPU:</h3>
+                    <h3 className='text-sm font-normal text-gray-500'>Unified with processor</h3>
+                </div>
+                <div className="flex justify-between items-center mt-3">
+                    <h3 className='text-sm'>Display:</h3>
+                    <h3 className='text-sm font-normal text-gray-500'>Liquid Retina (LTPO) @240Hz</h3>
+                </div>
+
             </aside>
         </main>
     );
