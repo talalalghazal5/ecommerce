@@ -4,6 +4,11 @@ import { useParams } from 'next/navigation'
 import Image from 'next/image';
 import React from 'react'
 import { Lens } from '@/components/ui/lens';
+import { Button } from '@/components/ui/button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import AddToCartButton from '../components/AddToCartButton';
+import { Rating, RatingButton } from '@/components/ui/shadcn-io/rating';
 
 export default function ProductPage() {
     const params = useParams<{ id: string }>();
@@ -38,6 +43,7 @@ export default function ProductPage() {
                 </ul>
             </div>
             <aside className='p-4 w-2xl h-screen border-l font-semibold'>
+                <AddToCartButton product={product!} />
                 <h2>Product details:</h2>
                 <p className='font-normal text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quidem vitae ullam distinctio a reiciendis voluptatem, quia recusandae ut ipsa quaerat quos esse odio velit quam quae ducimus fugiat. Delectus.</p>
             </aside>
