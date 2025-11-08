@@ -8,6 +8,7 @@ import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Product } from '@/data/types';
 import { useCart } from '@/contexts/CartContext';
 import DeletionAlert from '../cart/DeletionAlert';
+import { useRouter } from 'next/navigation';
 
 type QuantitySelectorProps = {
     quantity: number;
@@ -31,6 +32,7 @@ export const QuantitySelector = ({ quantity, onIncrement, onDecrement, isProduct
 export default function ProductCard({ product }: { product: Product, width?: number, height?: number }) {
     const [quantity, setQuantity] = useState<number>(1);
     const cart = useCart();
+    const router = useRouter();
 
     const handleQtyIncrement = () => {
         setQuantity(prev => prev + 1);
@@ -44,8 +46,12 @@ export default function ProductCard({ product }: { product: Product, width?: num
         if (cart.cart.includes(cartItem)) setQuantity(quantity + 1)
         cart.addToCart(cartItem);
     }
+
+    const handleTransition = () => {
+        router.push(`/product/${product.id}`)
+    }
     return (
-        <Card>
+        <Card onClick={handleTransition} className='cursor-pointer hover:shadow-2xl transition-all'>
             <CardHeader>
                 <CardTitle>
                     <Image src={product.imagepath} alt='' width={300} height={300}></Image>
@@ -57,8 +63,7 @@ export default function ProductCard({ product }: { product: Product, width?: num
                 <CardDescription>{product.description}</CardDescription>
             </CardContent>
             <CardFooter className='justify-between'>
-                <Button onClick={handleAddToCart}>Add to cart</Button>
-                <QuantitySelector isProductCard quantity={quantity} onIncrement={handleQtyIncrement} onDecrement={handleQtyDecrement} />
+                <Button onClick={handleTransition} size={'default'} variant={'secondary'} className='cursor-pointer w-full'>See Details</Button>
             </CardFooter>
         </Card>
     )
