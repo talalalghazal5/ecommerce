@@ -39,23 +39,7 @@ export default function ProductPage() {
             </div>
             <aside className='p-4 w-2xl h-screen border-l font-semibold'>
                 <h2>Product details:</h2>
-                <div className="flex justify-between items-center mt-3">
-                    <h3 className='text-sm'>Processor:</h3>
-                    <h3 className='text-sm text-gray-500 font-normal'>Apple M3 Ultra</h3>
-                </div>
-                <div className="flex justify-between items-center mt-3">
-                    <h3 className='text-sm'>RAM:</h3>
-                    <h3 className='text-sm font-normal text-gray-500'>32GB </h3>
-                </div>
-                <div className="flex justify-between items-center mt-3">
-                    <h3 className='text-sm'>GPU:</h3>
-                    <h3 className='text-sm font-normal text-gray-500'>Unified with processor</h3>
-                </div>
-                <div className="flex justify-between items-center mt-3">
-                    <h3 className='text-sm'>Display:</h3>
-                    <h3 className='text-sm font-normal text-gray-500'>Liquid Retina (LTPO) @240Hz</h3>
-                </div>
-
+                <p className='font-normal text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quidem vitae ullam distinctio a reiciendis voluptatem, quia recusandae ut ipsa quaerat quos esse odio velit quam quae ducimus fugiat. Delectus.</p>
             </aside>
         </main>
     );
