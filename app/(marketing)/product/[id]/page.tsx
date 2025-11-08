@@ -20,6 +20,14 @@ export default function ProductPage() {
             </div>
             <div className="flex flex-col items-start justify-start w-full p-5">
                 <h1 className="text-3xl font-semibold">{product?.title}</h1>
+                <div className="flex items-start space-x-1">
+                    <p className='text-xl'>98</p>
+                    <Rating className='gap-0' defaultValue={3.5} readOnly>
+                        {Array.from({ length: 5 }).map((_, index) => (
+                            <RatingButton className='text-yellow-500' key={index}></RatingButton>
+                        ))}
+                    </Rating>
+                </div>
                 <h1 className="text-xl font-semibold text-amber-500">${product?.price}</h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid delectus praesentium, nihil ipsam voluptatibus, laudantium maiores debitis iure quas accusamus tempore. Voluptatum optio velit dolor voluptatibus eos neque nihil quisquam?</p>
                 <h3 className='mt-4 font-semibold '>Overview:</h3>
