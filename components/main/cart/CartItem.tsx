@@ -8,7 +8,7 @@ import {
     ItemTitle,
 } from "@/components/ui/item"
 import { CartItem } from "@/data/types"
-import { QuantitySelector } from "../ui/ProductCard"
+
 import { useState } from "react"
 import { useCart } from "@/contexts/CartContext"
 import Image from "next/image"
@@ -16,6 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
 import DeletionAlert from "./DeletionAlert"
 import { Separator } from "@/components/ui/separator"
+import QuantitySelector from "@/app/(marketing)/product/components/QuantitySelector"
 
 
 export function CartItemCard({ item }: { item: CartItem }) {
