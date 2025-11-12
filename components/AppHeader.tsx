@@ -4,10 +4,12 @@ import Searchbar from './Searchbar'
 import 'boxicons/css/boxicons.min.css'
 import AppLogo from './AppLogo'
 import SignOutButton from './main/ui/SignOutButton'
-import SheetDemo from './main/SheetDemo'
 import { auth } from '@/auth'
 import UserAvatar from './main/ui/UserAvatar'
 import Link from 'next/link'
+import { Button } from './ui/button'
+import { Badge } from './ui/badge'
+import CartButton from './main/cart/CartButton'
 
 export default async function AppHeader() {
     const session = await auth();
@@ -18,7 +20,7 @@ export default async function AppHeader() {
             <Navbar />
             <Searchbar />
             <div className="flex gap-7 items-center">
-                <SheetDemo />
+                <CartButton />
                 {user ? <UserAvatar /> : <Link href={'/signin'}>Sign in</Link>}
                 {user && <SignOutButton />}
             </div>
