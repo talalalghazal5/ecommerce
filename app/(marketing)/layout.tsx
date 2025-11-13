@@ -32,19 +32,17 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <SessionProvider>
-        <CartProvider>
-          <body
-            className={`${geistSans.className} ${rougeScript.variable} antialiased`}
-          >
-            <AppHeader />
-            {children}
-            <AppFooter />
-            <Toaster position="bottom-center" />
-          </body>
-        </CartProvider>
-      </SessionProvider>
-    </html>
+
+
+    <div
+      className={`${geistSans.className} ${rougeScript.variable} antialiased`}
+    >
+      <AppHeader />
+      {children}
+      <AppFooter />
+      <Toaster position="bottom-center" />
+    </div>
+
+
   );
 }
