@@ -1,6 +1,7 @@
 import { CartProvider } from '@/contexts/CartContext';
 import { SessionProvider } from 'next-auth/react';
 import { Geist, Rouge_Script } from 'next/font/google';
+import '@/app/globals.css'
 import React from 'react'
 
 const geistSans = Geist({
