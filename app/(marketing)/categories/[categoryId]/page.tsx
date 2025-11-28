@@ -1,12 +1,16 @@
 'use client'
 import ProductCard from '@/components/main/ui/ProductCard';
 import { components, products } from '@/data/data';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
 export default function CategoryPage() {
     const params = useParams<{categoryId: string}>();
     const categoryId = params.categoryId;
     const category = components.find(category => category.id === categoryId);
+    const router = useRouter();
+    if (!components.includes(category!)) {
+        router.replace('/not-found')
+    }
     console.log(categoryId);
     
     return (
