@@ -22,7 +22,6 @@ export default async function AppHeader() {
             <div className="flex gap-7 items-center">
                 <CartButton />
                 {user ? <UserAvatar /> : <Link href={'/signin'}>Sign in</Link>}
-                {user && <SignOutButton />}
             </div>
         </header>
     )
