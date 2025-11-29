@@ -13,9 +13,9 @@ export default async function UserAvatar() {
     if (!session?.user?.name) return null
 
     return (
-        <HoverCard>
-            <HoverCardTrigger>
-                <Image src={session.user.image!} alt='' width={40} height={40} className='rounded-full cursor-pointer'></Image>
+        <HoverCard openDelay={0.5} closeDelay={20}>
+            <HoverCardTrigger className=''>
+                <Image src={session.user.image!} alt='' width={45} height={45} className='rounded-full cursor-pointer'></Image>
             </HoverCardTrigger>
             <HoverCardContent>
                 <div className="flex flex-col space-y-3">
