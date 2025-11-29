@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import AddToCartButton from '../components/AddToCartButton';
 import { Rating, RatingButton } from '@/components/ui/shadcn-io/rating';
+import { ScrollProgress } from '@/components/ui/scroll-progress';
 
 export default function ProductPage() {
     const params = useParams<{ id: string }>();
@@ -18,6 +19,7 @@ export default function ProductPage() {
 
     return (
         <main className='min-h-screen flex justify-between items-start pt-20'>
+            <ScrollProgress className='top-[65px] h-0.5'/>
             <div className="sticky top-20">
                 <Lens zoomFactor={5} isStatic={false} lensSize={250} ariaLabel='Zoom Area'>
                     <Image src={product?.imagepath ?? ''} width={1000} height={1000} alt=''></Image>

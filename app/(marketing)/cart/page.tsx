@@ -54,7 +54,7 @@ export default function CartPage() {
                 <h2 className='text-black/80 mb-3 font-semibold text-lg'>Promo code</h2>
                 <div className="relative">
                     <input type="text" placeholder='Type here...' className='rounded-full border p-3 border-black/20 w-full' />
-                    <Button className='absolute right-1 bottom-[5] w-[100px] h-10 rounded-full'>Apply</Button>
+                    <Button disabled={length === 0} className='absolute right-1 bottom-[5] w-[100px] h-10 rounded-full'>Apply</Button>
                 </div>
                     <Separator className='bg-black/20 mt-5'/>
                     <div className="flex flex-col mt-8 mb-4 space-y-3">
@@ -71,7 +71,7 @@ export default function CartPage() {
                             <h3 className='text-black text-lg font-semibold'>${cartProvider.total}</h3>
                         </div>
                     </div>
-                    <CheckoutButton />
+                    <CheckoutButton disabled={length === 0} />
 
             </div>
         </main>

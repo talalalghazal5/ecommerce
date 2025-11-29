@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Rouge_Script } from "next/font/google";
-import "../globals.css";
+// import "../globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import AppFooter from "@/components/AppFooter";
@@ -32,21 +32,16 @@ export default function MarketingLayout({
     children: React.ReactNode;
 }>) {
     return (
-
-        <SessionProvider>
-            <CartProvider>
-                <div
-                    className={`${geistSans.className} ${rougeScript.variable} antialiased`}
-                >
-                    <header className="px-6 py-3 flex items-center backdrop-blur-3xl z-50 justify-between fixed w-full border-b">
-                        <AppLogo />
-                    </header>
-                    {children}
-                    <Toaster position="bottom-center" />
-                    <AppFooter />
-                </div>
-            </CartProvider>
-        </SessionProvider>
+        <div
+            className={`${geistSans.className} ${rougeScript.variable} antialiased`}
+        >
+            <header className="px-6 py-3 flex items-center backdrop-blur-3xl z-50 justify-between fixed w-full border-b">
+                <AppLogo />
+            </header>
+            {children}
+            <Toaster position="bottom-center" />
+            <AppFooter />
+        </div>
 
     );
 }

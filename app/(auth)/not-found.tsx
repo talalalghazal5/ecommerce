@@ -1,4 +1,3 @@
-'use client'
 import { Button } from '@/components/ui/button'
 import { MorphingText } from '@/components/ui/morphing-text'
 import { TextAnimate } from '@/components/ui/text-animate'
