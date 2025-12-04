@@ -11,11 +11,11 @@ const geistSans = Geist({
     subsets: ["latin"],
 });
 
-const rougeScript = Rouge_Script({
-    variable: "--font-rouge-script",
-    subsets: ["latin"],
-    weight: ["400"]
-})
+// const rougeScript = Rouge_Script({
+//     variable: "--font-rouge-script",
+//     subsets: ["latin"],
+//     weight: ["400"]
+// })
 
 export const metadata: Metadata = {
     title: 'this is the root layout',
