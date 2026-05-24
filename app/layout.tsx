@@ -18,7 +18,7 @@ const geistSans = Geist({
 // })
 
 export const metadata: Metadata = {
-    title: 'this is the root layout',
+    title: 'StoreBrand - Your One-Stop Shop for Quality Products',
 
 }
 
