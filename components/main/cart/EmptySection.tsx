@@ -13,9 +13,9 @@ export function EmptySection() {
                 <EmptyMedia variant="icon">
                     <i className='bx bx-cart text-2xl text-black' ></i>
                 </EmptyMedia>
-                <EmptyTitle>No items yet</EmptyTitle>
+                <EmptyTitle>Your cart is empty</EmptyTitle>
                 <EmptyDescription>
-                    Go to products page and add some items to your cart!
+                    Browse the catalog and add products you want to compare or buy later.
                 </EmptyDescription>
             </EmptyHeader>
 

@@ -34,7 +34,7 @@ export default function ProductCard({ product }: { product: Product, width?: num
                 <CardDescription>{product.description}</CardDescription>
             </CardContent>
             <CardFooter className='justify-between'>
-                <Button onClick={handleTransition} size={'default'} variant={'secondary'} className='cursor-pointer w-full'>See Details</Button>
+                <Button onClick={handleTransition} size={'default'} variant={'secondary'} className='cursor-pointer w-full'>View product</Button>
             </CardFooter>
         </Card>
     )

@@ -53,7 +53,7 @@ export default function CartPage() {
             <div className="h-fit bg-gray-200 p-4 rounded-2xl">
                 <h2 className='text-black/80 mb-3 font-semibold text-lg'>Promo code</h2>
                 <div className="relative">
-                    <input type="text" placeholder='Type here...' className='rounded-full border p-3 border-black/20 w-full' />
+                    <input type="text" placeholder='Enter promo code' className='rounded-full border p-3 border-black/20 w-full' />
                     <Button disabled={length === 0} className='absolute right-1 bottom-[5] w-[100px] h-10 rounded-full'>Apply</Button>
                 </div>
                     <Separator className='bg-black/20 mt-5'/>

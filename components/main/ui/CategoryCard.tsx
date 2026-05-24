@@ -23,7 +23,7 @@ export function CategoryCard({ category }: { category: Category }) {
             <CardHeader>
                 <CardTitle className={`text-lg`}>{category.title}</CardTitle>
                 <CardDescription className="text-black">
-                    Enter your email below to login to your account
+                    {category.description}
                 </CardDescription>
                 <CardAction className="text-6xl h-full flex items-center">
                     {

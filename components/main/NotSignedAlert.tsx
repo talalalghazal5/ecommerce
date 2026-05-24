@@ -16,7 +16,7 @@ export default function NotSignedAlert() {
                 <AlertDialogHeader>
                     <AlertDialogTitle>You are not signed in</AlertDialogTitle>
                 </AlertDialogHeader>
-                <AlertDialogDescription>Please sign in to create an account to continue to checkout</AlertDialogDescription>
+                <AlertDialogDescription>Sign in to save your cart and continue to checkout.</AlertDialogDescription>
                 <AlertDialogFooter>
                     <AlertDialogAction onClick={() => router.push('/signin')}>
                         Sign in

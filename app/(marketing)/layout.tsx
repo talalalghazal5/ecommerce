@@ -22,7 +22,7 @@ const rougeScript = Rouge_Script({
 })
 
 export const metadata: Metadata = {
-  title: "StoreBrand - Your One-Stop Shop for Quality Products",
+  title: "StoreBrand | Modern Electronics Marketplace",
 };
 
 export default function MarketingLayout({

@@ -18,7 +18,7 @@ const geistSans = Geist({
 // })
 
 export const metadata: Metadata = {
-    title: 'StoreBrand - Your One-Stop Shop for Quality Products',
+    title: 'StoreBrand | Modern Electronics Marketplace',
 
 }
 

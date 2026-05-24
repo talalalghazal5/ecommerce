@@ -22,7 +22,7 @@ const rougeScript = Rouge_Script({
 })
 
 export const metadata: Metadata = {
-    title: "Welcome to StoreBrand",
+    title: "Sign in | StoreBrand",
 };
 
 export default function MarketingLayout({

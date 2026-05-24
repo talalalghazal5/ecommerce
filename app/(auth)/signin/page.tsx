@@ -12,8 +12,8 @@ export default function SigninPage() {
 
             </div>
             <div className="w-[55%] text-start">
-                <TypingAnimation className='text-4xl font-bold text-foreground' typeSpeed={40}>Welcome to StoreBrand!</TypingAnimation>
-                <h2 className='text-xl font-medium text-gray-700 mt-4 ml-2'>Please sign in to continue..</h2>
+                <TypingAnimation className='text-4xl font-bold text-foreground' typeSpeed={40}>Sign in to StoreBrand</TypingAnimation>
+                <h2 className='text-xl font-medium text-gray-700 mt-4 ml-2'>Access your saved cart, orders, and profile settings.</h2>
             </div>
             <div className='flex relative flex-col Z-99 gap-3 items-center border p-10 rounded-2xl shadow-2xl shadow-amber-300'>
                 <SigninButton></SigninButton>
